@@ -1,0 +1,102 @@
+/*
+  Project name(项目名称)：CSS_Element_stacking 
+  File name(文件名): t
+  Author(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/2/1 
+  Time(创建时间)： 19:39
+  Version(版本): 1.0
+  Description(描述)：
+  通过 z-index 属性您可以创建更加复杂的网页布局
+值	    描述
+auto	默认值，堆叠顺序与父元素相等
+number	使用具体数值（整数）设置元素的堆叠顺序
+inherit	从父元素继承 z-index 属性的值
+对于未设置 position 属性的元素或者 position 属性的值为 static 时，后定义的元素会覆盖前面的元素；
+对于设置有 position 属性且属性值不为 static 的元素，这些元素会覆盖没有设置 position 属性或者 position 属性值为 static 的元素；
+对于 position 属性值不为 static 且定义了 z-index 属性的元素，z-index 属性值大的元素会覆盖 z-index 属性值小的元素，
+即 z-index 属性值越大优先级越高，若 z-index 属性值相同，则后定义的元素会覆盖前面定义的元素；
+z-index 属性仅在元素定义了 position 属性且属性值不为 static 时才有效。
+ */
+
+.box-x {
+    width: 150px;
+    height: 350px;
+    border: 1px dashed red;
+    background-color: rgba(255, 153, 153, 0.7);
+    float: left;
+}
+
+.box-y {
+    width: 300px;
+    height: 120px;
+    border: 1px dashed green;
+    background-color: rgba(179, 255, 153, 0.7);
+}
+
+.one {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 4;
+}
+
+.two {
+    position: relative;
+    top: 30px;
+    left: 80px;
+    z-index: 3;
+}
+
+.three {
+    position: relative;
+    top: -10px;
+    left: 120px;
+    z-index: 2;
+}
+
+.four {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+}
+
+.five {
+    margin-left: 100px;
+    margin-top: -50px;
+    background-color: rgba(255, 255, 153, 0.7);
+    z-index: 5;
+}
+
+div.form {
+    border: 5px skyblue solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+table {
+    width: 30vw;
+    border-collapse: collapse;
+    color: skyblue;
+    background-color: lightpink;
+}
+
+td,input,input.c {
+    font-size: 30px;
+}
+
+input {
+    /*font-size: 24px;*/
+    /*width: 90%;*/
+    color: coral;
+}
+
+input.c {
+    width: 80%;
+    color: coral;
+}
